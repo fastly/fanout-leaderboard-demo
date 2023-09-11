@@ -1,0 +1,184 @@
+/*
+ * Copyright Fastly, Inc.
+ * Licensed under the MIT license. See LICENSE file for details.
+ */
+
+.root {
+    display: flex;
+    flex-direction: column;
+
+    width: 95%;
+    height: 95%;
+    justify-items: left;
+    align-self: center;
+}
+
+.root > *:nth-child(1) {
+    flex-grow: 1;
+}
+
+.root > *:nth-child(2) {
+}
+
+.main {
+
+    flex-grow: 1;
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background: linear-gradient(to bottom,  rgba(53,106,160,1) 0%,rgba(53,106,160,1) 100%); /* W3C */
+    border: 3px solid white;
+    border-radius: 5%;
+    box-shadow: inset 5px 5px 5px 0 rgba(0,0,0,0.75);
+
+    font-size: 4vw;
+
+    position: relative;
+
+}
+
+.main > *:nth-child(1) {
+    height: 20%;
+}
+
+.main > *:nth-child(2) {
+    flex-grow: 1;
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleText {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    color: #DAA520;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+    font-size: min(15vh, 8vw);
+
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.main :global .row {
+    position: absolute;
+    width: 100%;
+    transition: top 500ms ease;
+    display: flex;
+}
+.main :global .name {
+    text-align: left;
+}
+:global .row .name {
+    width: 40%;
+}
+
+:global .row .score {
+    width: 60%;
+}
+
+.main :global .row.pos1  { top: 0; }
+.main :global .row.pos2  { top: 20%; }
+.main :global .row.pos3  { top: 40%; }
+.main :global .row.pos4  { top: 60%; }
+.main :global .row.pos5  { top: 80%; }
+
+
+
+.board {
+
+    flex-grow: 1;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+
+    margin: 0.5em auto;
+    width: 90%;
+
+    color: white;
+    text-shadow: 0 0 4px rgba(255, 255, 81, 1);
+
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+}
+
+.board > div:nth-child(1) {
+    height: 20%;
+}
+.board > div:nth-child(2) {
+    flex-grow: 1;
+}
+
+.boardBody {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.boardBody :global .row {
+    height: 20%;
+    font-size: min(8vw, 6vh);
+}
+.boardBody :global .score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.boardBody :global .score > div:nth-child(1) {
+    width: 70%;
+}
+.boardBody :global .score > div:nth-child(2) {
+    flex-grow: 1;
+}
+.main :global .score-value {
+    text-align: right;
+    width: 100%;
+}
+
+.board :global button.inc {
+    font-size: min(4vw, 5vh);
+    touch-action: manipulation;
+}
+
+.boardHead {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.boardHead :global .row {
+    font-size: min(8vw, 8vh);
+}
+
+:global .row > div {
+    line-height: 12vh;
+    text-align: center;
+    display: inline-block;
+}
+
+.info {
+    font-size: min(0.8rem, 5vh);
+    margin: 0.5rem;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.info a, .info a:focus, .info a:visited, .info a:active {
+    color: #ccccff;
+}
+.info a:hover {
+    color: #ffffff;
+}

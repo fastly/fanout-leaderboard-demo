@@ -1,0 +1,48 @@
+{
+  "name": "fanout-leaderboard-demo",
+  "version": "0.1.1",
+  "description": "Demonstrates use of Fastly Fanout to maintain a realtime Leaderboard.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "serve": "NODE_ENV=production node server/index.js",
+    "start": "npm run build && npm run serve",
+    "dev:watch": "webpack --watch",
+    "dev:serve": "nodemon --watch server server/index.js",
+    "dev": "run-p \"dev:*\""
+  },
+  "dependencies": {
+    "@fanoutio/grip": "^3.3.1",
+    "@fanoutio/serve-grip": "^1.3.1",
+    "express": "^4.18.2",
+    "nunjucks": "^3.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sqlite": "^5.0.1",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "nodemon": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "odometer": "^0.4.8",
+    "style-loader": "^3.3.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "fanout",
+    "realtime",
+    "sse",
+    "sqlite"
+  ]
+}

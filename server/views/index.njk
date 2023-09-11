@@ -1,0 +1,27 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <div id="app"></div>
+  <script src="/client/bundle.js"></script>
+  <script>
+    (function() {
+      const rootElement = document.getElementById('app');
+      const onIncrement = async (playerId) => {
+        await fetch('/boards/{{ boardId }}/players/' + playerId + '/score-add/', {
+          method: 'POST',
+        });
+      };
+      const players = {{ players | dump | safe }};
+
+      const app = LeaderboardClient.startLeaderboardApp({ rootElement, onIncrement, players });
+
+      // EventSource-based updates
+      const boardEventSource = new EventSource('/boards/{{ boardId }}/');
+      boardEventSource.addEventListener('update', function (e) {
+        const data = JSON.parse(e.data);
+        app.setPlayers(data.players);
+      });
+
+    })();
+  </script>
+{% endblock %}

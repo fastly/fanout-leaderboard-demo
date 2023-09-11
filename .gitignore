@@ -1,0 +1,6 @@
+.glitchdotcom.json
+.node-gyp
+
+.data/
+node_modules/
+server/public/client/

@@ -1,0 +1,17 @@
+/*
+ * Copyright Fastly, Inc.
+ * Licensed under the MIT license. See LICENSE file for details.
+ */
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+#app {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background: linear-gradient(to bottom,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+    justify-content: center;
+}
