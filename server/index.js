@@ -17,7 +17,7 @@ import SQLite from './db/SQLite.js';
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 const app = express();
-const port = process.env.PORT ?? 3000;
+const port = process.env.PORT || 3000;
 
 // Initialize Nunjucks templating
 nunjucks.configure(path.resolve(__dirname, 'views'), {
@@ -27,7 +27,7 @@ nunjucks.configure(path.resolve(__dirname, 'views'), {
 
 // Initialize ServeGrip
 const serveGrip = new ServeGrip({
-  grip: process.env.GRIP_URL ?? 'http://127.0.0.1:5561/',
+  grip: process.env.GRIP_URL || 'http://127.0.0.1:5561/',
   gripVerifyKey: process.env.GRIP_VERIFY_KEY,
 });
 
