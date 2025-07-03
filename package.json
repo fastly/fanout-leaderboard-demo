@@ -34,7 +34,7 @@
     "webpack-cli": "^5.1.4"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "license": "MIT",
   "keywords": [

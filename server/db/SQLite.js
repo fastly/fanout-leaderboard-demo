@@ -14,7 +14,7 @@ import * as dbWrapper from 'sqlite';
 import sqlite3 from 'sqlite3';
 
 // Initialize the database
-const dbFile = './.data/data.db';
+const dbFile = '/tmp/fanout-leaderboard-demo.db';
 
 export default class SQLite {
   static instance;

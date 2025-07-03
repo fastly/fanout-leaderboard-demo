@@ -1,0 +1,16 @@
+runtime: nodejs20
+entrypoint: npm run serve
+
+service: fanout-leaderboard-demo-origin
+
+handlers:
+  - url: /.*
+    script: auto
+
+env_variables:
+  GRIP_URL: "__GRIP_URL__"
+  GRIP_VERIFY_KEY: "__GRIP_VERIFY_KEY__"
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 1

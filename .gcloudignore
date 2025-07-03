@@ -1,0 +1,8 @@
+edge/
+.node-gyp
+
+node_modules/
+secrets.json
+
+# DO NOT ignore built output
+# server/public/client/
