@@ -1,5 +1,6 @@
 .glitchdotcom.json
 .node-gyp
+.env
 
 .data/
 node_modules/

@@ -38,11 +38,12 @@ async function handleRequest(event) {
       });
     }
 
-    // If it's a GET request, then we will pass it through Fanout
-
-    // The createFanoutHandoff() creates a Response instance
-    // passing the original request, through Fanout, to the declared backend.
-    return createFanoutHandoff(event.request, 'origin');
+    // If it's a GET request for something under /boards, then we will pass it through Fanout
+    if (pathname.startsWith('/boards')) {
+      // The createFanoutHandoff() creates a Response instance
+      // passing the original request, through Fanout, to the declared backend.
+      return createFanoutHandoff(event.request, 'origin');
+    }
   }
 
   return fetch(event.request, { backend: 'origin' });
