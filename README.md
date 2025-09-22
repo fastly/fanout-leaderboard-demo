@@ -10,7 +10,7 @@ To enable realtime updates, [Fastly Fanout](https://docs.fastly.com/products/fan
 
 The project comprises two main parts:
 
-* A web application. The backend for this web application is written in JavaScript, for [Node.js](https://nodejs.dev/) 18.x or newer.
+* A web application. The backend for this web application is written in JavaScript, for [Node.js](https://nodejs.dev/) 22.9.0 or newer.
    * It uses the [Express](https://expressjs.com/) web framework and uses [SQLite](https://www.sqlite.org/) to maintain a small database.
    * The frontend for this web application is a [React](https://react.dev/) application that is bundled using [Webpack](https://webpack.js.org/). The bundle is served by the backend as a static file.
    * The `package.json` file is at the root of this repo.
